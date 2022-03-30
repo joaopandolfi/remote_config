@@ -1,0 +1,23 @@
+{
+    "SERVER_NAME": "Oraculo",
+    "SYSTEM_ID": "1",
+
+    "SERVER_DEBUG":"true",
+    
+    "MONGO_URL":"mongodb://localhost:27017",
+    "MONGO_DB":"oraculo",
+    "MONGO_POOL": "5",
+    
+    "SERVER_PORT":"5656",
+    "SERVER_CORS":"*",
+    "SERVER_TIMEOUT":"120",
+    
+    "TOKEN_VALIDITY_MINUTES":"840",
+    "JWT_SECRET":"BE(@)!#$!@S@&J***22*323WASD@###MOLhu3hu3DHFT@8uhr7tqpmlahs;iop{72hzlm;.,][1#",
+    
+    "GANDALF_URL":"http://localhost:9991",
+    
+    "SNAKE_DEFAULT":"False",
+
+    "AES_KEY":"9832hjpi#21@3*&jlpnghlazdf28$e"
+}

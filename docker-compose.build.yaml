@@ -1,0 +1,11 @@
+version: "3.2"
+services:
+  oraculo.build:
+    container_name: oraculo_builder
+    image: golang:1.16-buster
+    command: bash -c "CGO_ENABLED=0 go build -o /_build/oraculo"
+    volumes:
+      - ./src:/src
+      - ./build:/_build
+    working_dir: /src
+

@@ -1,0 +1,7 @@
+version: "3"
+services:
+  oraculo.mongo:
+    container_name: oraculo.mongo
+    image: mongo:4.0
+    ports:
+      - "27017:27017"

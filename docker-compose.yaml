@@ -1,0 +1,12 @@
+version: "2.1"
+services:
+  oraculo:
+    container_name: oraculo
+    image: alpine
+    command : ./oraculo
+    volumes:
+      - ./build:/_build
+    restart: always
+    working_dir: /_build
+    ports:
+      - "5656:5656"
