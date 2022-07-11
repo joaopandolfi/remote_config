@@ -39,6 +39,24 @@ func (c *controller) checkToken(w http.ResponseWriter, r *http.Request) {
 	handlers.Response(w, map[string]interface{}{"logged": false, "message": "Invalid Token"}, http.StatusOK)
 }
 
+// newToken - creates a valid token to register vaults
+func (c *controller) newToken(w http.ResponseWriter, r *http.Request) {
+	token, err := utils.NewJwtTokenV2(utils.Token{
+		ID:          "0",
+		Permission:  "20",
+		Institution: "0",
+		Authorized:  true,
+	}, 15)
+
+	if err != nil {
+		utils.Error("[AuthController][NewToken] - creating token", err.Error())
+		handlers.RESTResponseError(w, "creating token")
+		return
+	}
+
+	handlers.RESTResponse(w, token)
+}
+
 // Options allow to
 func Options(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")

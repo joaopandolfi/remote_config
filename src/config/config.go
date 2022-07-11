@@ -13,6 +13,7 @@ import (
 type Config struct {
 	File           map[string]string
 	AESKey         string
+	BasicAuth      string
 	SystemID       int
 	Propertyes     c.Configurations
 	Server         server     `json:"server"`
@@ -36,7 +37,6 @@ type security struct {
 	TLSCert    string
 	TLSKey     string
 	Opsec      secure.Options
-	Resethash  string
 	BcryptCost int //10,11,12,13,14
 	JWTSecret  string
 	AESKey     string
@@ -65,6 +65,7 @@ func Load(args []string) {
 	systemID, _ := strconv.Atoi(cfg.File["SYSTEM_ID"])
 	cfg.SystemID = systemID
 	cfg.AESKey = cfg.File["AES_KEY"]
+	cfg.BasicAuth = cfg.File["BASIC_AUTH"]
 	cfg.Server.Security.AESKey = cfg.AESKey
 	cfg.SnakeByDefault, _ = strconv.ParseBool(cfg.File["SNAKE_DEFAULT"])
 }
